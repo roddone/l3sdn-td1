@@ -1,20 +1,23 @@
 <script setup>
 import Field from './components/Field.vue';
 import Tweet from './components/Tweet.vue';
-
 import { ref } from 'vue';
-const tweet = ref ({});
+
+const tweet = ref([]);
+
+function handleTweetSubmitted(newTweet) {
+  tweet.value.push(newTweet);
+}
 </script>
 
 <template>
-    <Field label="Name" />
-    <Tweet v-for="tweet in tweet" :profil="tweet.profil" :message="tweet.message" :date="tweet.date" />
-
-
-
-
-
+  <div>
+    <Field label="TweetField" @tweetSubmitted="handleTweetSubmitted" />
+    <Tweet v-for="tweetItem in tweet" :profil="tweetItem.profil" :message="tweetItem.message" :date="tweetItem.date" />
+  </div>
 </template>
 
+
 <style scoped>
+
 </style>

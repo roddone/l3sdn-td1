@@ -1,21 +1,24 @@
 <template>
-
     <div class="field">
-        <label class="label">{{ label }}</label>
-        <form class="control">
+      <label class="label">{{ label }}</label>
+      <form class="control" @submit.prevent="addTweet">
         <input class="input" type="text" :placeholder="placeholder" v-model="value">
-        <button type = "submit" class="button is-primary" @click="addTweet">Tweet</button>
-        </form>
+        <button type="submit" class="button is-primary">Tweet</button>
+      </form>
     </div>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-defineProps(['label', 'placeholder', 'value'])
-const placeholder = ref('Enter a value')
-const value = ref('')
-
-function addTweet() {
-    tweet.value.push({profil: 'Etienne Baillieux', message: value.value, date: new Date()})
-}
-</script>
+  </template>
+  
+  <script setup>
+  import { ref, defineProps, defineEmits } from 'vue';
+  
+  defineProps(['label', 'placeholder', 'value']);
+  
+  const emit = defineEmits(['tweetSubmitted']);
+  const value = ref('');
+  
+  function addTweet() {
+    emit('tweetSubmitted', { profil: 'Etienne Baillieux', message: value.value, date: new Date().toLocaleString() });
+    value.value = ''; 
+  }
+  </script>
+  

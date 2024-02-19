@@ -2,7 +2,7 @@
 </script>
 
 <template>
-
+X
 </template>
 
 <style scoped>

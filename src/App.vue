@@ -36,9 +36,10 @@
       addTweet(tweetContent) {
         // Méthode pour ajouter un tweet à la liste
         const newTweet = {
-          content: tweetContent,
-          createdAt: new Date(),
-          timeAgo: this.calculateTimeAgo(new Date())  // Utilise la date actuelle pour le calcul
+            content: tweetContent,
+            createdAt: new Date(),
+            timeAgo: this.calculateTimeAgo(new Date()),
+            author: 'Shinibarty'
         };
   
         this.tweets.unshift(newTweet);  // Ajoute le nouveau tweet au début de la liste

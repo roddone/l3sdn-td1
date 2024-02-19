@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Tweet v-for="tweet in tweets" :key="tweet.id" :tweetContent="tweet.content" :timeAgo="tweet.timeAgo" />
+      <Tweet v-for="tweet in tweets" :key="tweet.id" :author="tweet.author" :tweetContent="tweet.content" :timeAgo="tweet.timeAgo" />
     </div>
   </template>
   
@@ -14,4 +14,3 @@
     props: ['tweets']
   };
   </script>
-  

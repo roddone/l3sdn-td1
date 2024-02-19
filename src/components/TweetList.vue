@@ -1,27 +1,46 @@
 <template>
-    <div class="tweet-list">
-      <div v-for="tweet in tweets" :key="tweet.id">
-        <p>{{ tweet.content }}</p>
-        <small>Posté il y a {{ timeSince(tweet.date) }}</small>
-      </div>
+  <div class="tweet-list">
+    <div v-for="tweet in tweets" :key="tweet.id" class="tweet-item">
+      <p>{{ tweet.content }}</p>
+      <small>Posté il y a {{ timeSince(tweet.date) }}</small>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      tweets: {
-        type: Array,
-        default: () => []
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    tweets: Array
+  },
+  methods: {
+    timeSince(date) {
+      const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+      let interval = Math.floor(seconds / 31536000);
+
+      if (interval >= 1) {
+        return interval + " an" + (interval > 1 ? "s" : "");
       }
-    },
-    methods: {
-      timeSince(date) {
-        const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+      interval = Math.floor(seconds / 2592000);
+      if (interval >= 1) {
+        return interval + " mois";
       }
+      interval = Math.floor(seconds / 86400);
+      if (interval >= 1) {
+        return interval + " jour" + (interval > 1 ? "s" : "");
+      }
+      interval = Math.floor(seconds / 3600);
+      if (interval >= 1) {
+        return interval + " heure" + (interval > 1 ? "s" : "");
+      }
+      interval = Math.floor(seconds / 60);
+      if (interval >= 1) {
+        return interval + " minute" + (interval > 1 ? "s" : "");
+      }
+      return Math.floor(seconds) + " seconde" + (seconds > 1 ? "s" : "");
     }
-  };
-  </script>
+  }
+};
+</script>
   
   <style scoped>
   .tweet-list {

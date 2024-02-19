@@ -1,50 +1,43 @@
 <template>
-    <div id="app">
-      <search-bar @search="handleSearch" />
-      <tweet-box @post-tweet="handlePostTweet" />
-      <tweet-list :tweets="tweets" />
-    </div>
-  </template>
-  
-  <script>
-  import SearchBar from './components/SearchBar.vue';
-  import TweetBox from './components/TweetBox.vue';
-  import TweetList from './components/TweetList.vue';
-  
-  export default {
-    name: 'App',
-    components: {
-      SearchBar,
-      TweetBox,
-      TweetList
+  <div id="app">
+    <search-bar @onSearch="handleSearch" />
+    <tweet-box @post-tweet="handlePostTweet" />
+    <tweet-list :tweets="tweets" />
+  </div>
+</template>
+
+<script>
+import SearchBar from './components/SearchBar.vue';
+import TweetBox from './components/TweetBox.vue';
+import TweetList from './components/TweetList.vue';
+
+export default {
+  components: {
+    SearchBar,
+    TweetBox,
+    TweetList
+  },
+  data() {
+    return {
+      tweets: []
+    };
+  },
+  methods: {
+    handleSearch(searchQuery) {
+      // Implémentez la logique de recherche ici...
     },
-    data() {
-      return {
-        tweets: [],
-        searchQuery: ''
+    handlePostTweet(newTweet) {
+      const newTweetObject = {
+        id: this.tweets.length + 1,
+        content: newTweet,
+        date: new Date().toISOString() // Stockez la date en format ISO pour la compatibilité
       };
-    },
-    methods: {
-      handleSearch(query) {
-        // Mettre à jour la requête de recherche et peut-être filtrer les tweets
-        this.searchQuery = query;
-        console.log('Recherche en cours pour:', this.searchQuery);
-        // Vous devrez ajouter une logique pour filtrer les tweets basée sur la recherche
-      },
-      handlePostTweet(tweetContent) {
-        // Ajouter le nouveau tweet à la liste des tweets
-        const newTweet = {
-          id: this.tweets.length + 1,
-          content: tweetContent,
-          date: new Date()
-        };
-        this.tweets.unshift(newTweet); // Ajoute le tweet au début du tableau
-      }
+      this.tweets.unshift(newTweetObject); // Ajoutez le nouveau tweet au début du tableau
     }
-  };
-  </script>
+  }
+};
+</script>
   
   <style>
-  /* Votre CSS ici */
   </style>
   

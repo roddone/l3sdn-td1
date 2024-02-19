@@ -1,27 +1,27 @@
 <template>
-    <div class="tweet-box">
-      <textarea v-model="newTweet" placeholder="Quoi de neuf ?" class="tweet-textarea"></textarea>
-      <button @click="postTweet" class="tweet-button">Poster</button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        newTweet: ''
-      };
-    },
-    methods: {
-      postTweet() {
-        if (this.newTweet) {
-          this.$emit('onPost', this.newTweet);
-          this.newTweet = ''; // Réinitialiser le champ de saisie
-        }
+  <div class="tweet-box">
+    <textarea v-model="newTweet" placeholder="Quoi de neuf ?"></textarea>
+    <button @click="postTweet">Poster</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      newTweet: ''
+    };
+  },
+  methods: {
+    postTweet() {
+      if (this.newTweet.trim()) {
+        this.$emit('post-tweet', this.newTweet);
+        this.newTweet = ''; 
       }
     }
-  };
-  </script>
+  }
+};
+</script>
   
   <style scoped>
   .tweet-box {

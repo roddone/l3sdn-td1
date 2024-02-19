@@ -13,7 +13,7 @@
   <script>
   export default {
     props: {
-      tweet: Object, // Propriété pour recevoir les détails du tweet
+      tweet: Object, 
     },
   };
   </script>

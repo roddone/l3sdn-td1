@@ -151,7 +151,7 @@
   
   .search-container {
     margin-left: 20px;
-    width: 200px; /* Ajustez la largeur selon vos besoins */
+    width: 200px; 
   }
   </style>
   

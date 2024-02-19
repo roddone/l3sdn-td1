@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "accountName": "aymen",
+    "arobaseName": "aymenn8",
+    "tweetContent": "Hello World",
+    "tweetDate": "2024-02-19 12:00:00",
+    "tweetLikes": "100",
+    "tweetRetweets": "50"
+  },
+  {
+    "id": "2",
+    "accountName": "user2",
+    "arobaseName": "user2n",
+    "tweetContent": "Bonjour Monde",
+    "tweetDate": "2024-01-02 13:00:00",
+    "tweetLikes": "200",
+    "tweetRetweets": "100"
+  },
+  {
+    "id": "3",
+    "accountName": "user10",
+    "arobaseName": "user10n",
+    "tweetContent": "Hola Mundo",
+    "tweetDate": "2021-01-10 21:00:00",
+    "tweetLikes": "1000",
+    "tweetRetweets": "500"
+  }
+]

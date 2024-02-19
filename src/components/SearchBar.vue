@@ -40,7 +40,7 @@ export default {
         { id: 11, name: 'Karima',passion: 'Tennis' },
         { id: 12, name: 'Louanne', passion: 'Manga' }
       ],
-      tweets: [ /* ... vos tweets ... */ ],
+      tweets: [ ],
       filteredAccounts: [],
       filteredTweets: [],
       selectedResult: null,

@@ -18,7 +18,6 @@
     },
     methods: {
       createPost() {
-        // Émettre un événement pour informer le composant parent de la nouvelle publication
         this.$emit('new-post', { content: this.newPostContent });
         // Réinitialiser le champ après la publication
         this.newPostContent = '';

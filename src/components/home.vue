@@ -26,7 +26,7 @@
   export default {
     data() {
       return {
-        profilePicture: 'path_to_your_profile_picture', // Update this path
+        profilePicture: 'assets/images/profile', 
         userName: 'Sabine Mhanna',
         tweetContent: '',
         tweets: []
@@ -37,7 +37,7 @@
         if (this.tweetContent.trim() !== '') {
           const currentTime = new Date().toLocaleString();
           const newTweet = {
-            id: Date.now(), // Changed to use Date.now() for a unique ID
+            id: Date.now(), 
             content: this.tweetContent,
             time: currentTime
           };
@@ -53,7 +53,6 @@
   </script>
   
   <style scoped>
-  /* Add styles for the delete button here, along with other styles mentioned previously */
   .tweet-footer {
     display: flex;
     justify-content: space-between;

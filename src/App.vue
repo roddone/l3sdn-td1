@@ -1,9 +1,22 @@
-<script setup>
-</script>
-
 <template>
-
+  <div id="app">
+    <Tweet />
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Tweet from './components/home.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Tweet
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: Arial, sans-serif;
+}
 </style>

@@ -82,7 +82,6 @@ export default {
 </script>
   
 <style scoped>
-
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #e6ecf0;

@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .tweet-item {
   padding: 10px;
-  border-bottom: 1px solid #e1e8ed;
+  border-bottom: 1px solid #061017;
 }
 
 .tweet-content {
@@ -58,7 +58,7 @@ export default {
 }
 
 .tweet-time {
-  color: #657786;
+  color: #040b10;
   font-size: 0.8rem;
 }
 </style>
